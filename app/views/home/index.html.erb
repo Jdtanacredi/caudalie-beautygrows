@@ -1,3 +1,10 @@
 <% @instagram.each do |instagram| %>
-  <%= image_tag instagram.images.standard_resolution.url %>
+  <div style="float:left;">
+    <% instagram_url = instagram.images.standard_resolution.url %>
+    <%= image_tag instagram_url %>
+    <br />
+    <%= instagram.id %>
+    <br />
+    <%= instagram_url %>
+  </div>
 <% end %>
