@@ -1,4 +1,6 @@
 CaudalieBeautygrows::Application.routes.draw do
+  devise_for :users
+
   resources :photos do
     put 'approve', :approve, on: :collection
   end
