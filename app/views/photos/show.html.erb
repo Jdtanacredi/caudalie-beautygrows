@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Instagram:</b>
+  <%= @photo.instagram_id %>
+</p>
+
+<p>
+  <b>Standard url:</b>
+  <%= @photo.standard_url %>
+</p>
+
+<p>
+  <b>Thumb url:</b>
+  <%= @photo.thumb_url %>
+</p>
+
+<p>
+  <b>Approved:</b>
+  <%= @photo.approved %>
+</p>
+
+
+<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%= link_to 'Back', photos_path %>

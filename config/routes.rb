@@ -1,4 +1,8 @@
 CaudalieBeautygrows::Application.routes.draw do
+  resources :photos do
+    put 'approve', :approve, on: :collection
+  end
+
   root :to => "home#index"
 
   # The priority is based upon order of creation:
