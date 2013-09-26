@@ -1,3 +1,23 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.fb-tab-content {
+  width: 810px;
+}
+
+#beautygrows-header {
+  height: 340px;
+}
+
+.instaphoto {
+  width: 162px;
+  height: 162px;
+  float: left;
+
+  img {
+    width: 162px;
+    height: 162px;
+  }
+}
+

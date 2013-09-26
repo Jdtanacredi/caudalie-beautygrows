@@ -1,50 +1,49 @@
-
-<h1>Listing photos</h1>
-
-<% if @instagram_photos %>
-<table>
-  <tr>
-    <th>Approved</th>
-    <th></th>
-  </tr>
-  <%= form_tag approve_photos_path, method: :put do %>
-    <% @instagram_photos.each do |photo| %>
+<% if current_user and can? :manage, :photo %>
+  <% if @instagram_photos %>
+  <table>
+    <tr>
+      <th>Approved</th>
+      <th></th>
+    </tr>
+    <%= form_tag approve_photos_path, method: :put do %>
+      <% @instagram_photos.each do |photo| %>
+        <tr>
+          <% instagram_thumbnail_url = photo.images.thumbnail.url %>
+          <% instagram_standard_url = photo.images.standard_resolution.url %>
+          <td><%= check_box_tag "approved_photos[]", photo.id %></td>
+          <td><%= image_tag instagram_thumbnail_url %></td>
+          <%= hidden_field_tag "photos[][instagram_id]", photo.id %>
+          <%= hidden_field_tag "photos[][standard_url]", instagram_standard_url %>
+          <%= hidden_field_tag "photos[][thumb_url]", instagram_thumbnail_url %>
+        </tr>
+      <% end %>
       <tr>
-        <% instagram_thumbnail_url = photo.images.thumbnail.url %>
-        <% instagram_standard_url = photo.images.standard_resolution.url %>
-        <td><%= check_box_tag "approved_photos[]", photo.id %></td>
-        <td><%= image_tag instagram_thumbnail_url %></td>
-        <%= hidden_field_tag "photos[][instagram_id]", photo.id %>
-        <%= hidden_field_tag "photos[][standard_url]", instagram_standard_url %>
-        <%= hidden_field_tag "photos[][thumb_url]", instagram_thumbnail_url %>
+        <td><%= submit_tag "Submit" %></td>
+        <td></td>
       </tr>
     <% end %>
-    <tr>
-      <td><%= submit_tag "Submit" %></td>
-      <td></td>
-    </tr>
-  <% end %>
-</table>
-<% elsif @photos %>
-<table>
-  <tr>
-    <th>Approved</th>
-    <th></th>
-  </tr>
-  <%= form_tag approve_photos_path, method: :put do %>
-    <% @photos.each do |photo| %>
+  </table>
+  <% elsif @photos %>
+    <table>
       <tr>
-        <td><%= check_box_tag "approved_photos[]", photo.instagram_id, true %></td>
-        <td><%= image_tag photo.thumb_url %></td>
-        <%= hidden_field_tag "photos[][instagram_id]", photo.instagram_id %>
-        <%= hidden_field_tag "photos[][standard_url]", photo.standard_url %>
-        <%= hidden_field_tag "photos[][thumb_url]", photo.thumb_url %>
+        <th>Approved</th>
+        <th></th>
       </tr>
-    <% end %>
-    <tr>
-      <td><%= submit_tag "Submit" %></td>
-      <td></td>
-    </tr>
+      <%= form_tag approve_photos_path, method: :put do %>
+        <% @photos.each do |photo| %>
+          <tr>
+            <td><%= check_box_tag "approved_photos[]", photo.instagram_id, true %></td>
+            <td><%= image_tag photo.thumb_url %></td>
+            <%= hidden_field_tag "photos[][instagram_id]", photo.instagram_id %>
+            <%= hidden_field_tag "photos[][standard_url]", photo.standard_url %>
+            <%= hidden_field_tag "photos[][thumb_url]", photo.thumb_url %>
+          </tr>
+        <% end %>
+        <tr>
+          <td><%= submit_tag "Submit" %></td>
+          <td></td>
+        </tr>
+      <% end %>
+    </table>
   <% end %>
-</table>
 <% end %>

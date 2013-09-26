@@ -1,11 +1,13 @@
-<% @instagram.each do |instagram| %>
-  <div style="float:left;">
-    <% instagram_url = instagram.images.standard_resolution.url %>
-    <% instagram_thumbnail_url = instagram.images.thumbnail.url %>
-    <%= image_tag instagram_thumbnail_url %>
-    <br />
-    <%= instagram.id %>
-    <br />
-    <%= instagram_url %>
+<div class="fb-tab-content">
+  <div id="beautygrows-header">
+    <%= image_tag('BeautyGrowsHeader_v2.jpg') %>
   </div>
-<% end %>
+  <div id="beautygrows-gallery">
+    <% @photos.each_with_index do |photo, i| %>
+      <div class="instaphoto p<%= i %>">
+        <%= image_tag photo.standard_url %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
