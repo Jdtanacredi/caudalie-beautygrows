@@ -7,7 +7,7 @@ class PhotosController < ApplicationController
     if params[:approved] == "true"
       @photos = Photo.where("approved = ?", true)
     else
-      @instagram_photos = Instagram.tag_recent_media('awesome', {count: 30})
+      @instagram_photos = Instagram.tag_recent_media('beautygrows', {count: 30})
     end
 
     respond_to do |format|
