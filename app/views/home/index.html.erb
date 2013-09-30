@@ -4,9 +4,7 @@
   </div>
   <div id="beautygrows-gallery">
     <% @photos.each_with_index do |photo, i| %>
-      <div class="instaphoto p<%= i %>">
-        <%= image_tag photo.standard_url %>
-      </div>
+      <%= image_tag photo.standard_url, class: "instaphoto size#{i % 3} p#{i+1}" %>
     <% end %>
   </div>
 </div>
