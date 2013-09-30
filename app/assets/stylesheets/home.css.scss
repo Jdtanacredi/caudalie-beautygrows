@@ -9,6 +9,10 @@
 
 #beautygrows-header {
   height: 340px;
+
+  img {
+    width: 800px;
+  }
 }
 
 #beautygrows-gallery {
@@ -24,60 +28,60 @@
 .p14, .p16, .p17, .p18, .p19, .p20, .p21, .p22, .p23, .p24,
 .p25, .p26, .p27, .p28, .p29, .p30, .p31, .p32, .p33, .p34, .p35, .p36,
 .p37, .p39, .p40, .p41, .p42, .p43 {
-  width: 162px;
-  height: 162px;
+  width: 160px;
+  height: 160px;
 }
 
 .p1, .p15, .p38 {
-  width: 324px;
-  height: 324px;
+  width: 320px;
+  height: 320px;
 }
 
 .p9 {
-  width: 486px;
-  height: 486px;
+  width: 480px;
+  height: 480px;
 }
 
 .p1 { top: 0px; left: 0px; }
-.p2 { top: 0px; left: 324px; }
-.p3 { top: 0px; left: 486px; }
-.p4 { top: 0px; left: 648px; }
-.p5 { top: 324px; left: 0px; }
-.p6 { top: 324px; left: 162px; }
-.p7 { top: 486px; left: 0px; }
-.p8 { top: 486px; left: 162px; }
-.p9 { top: 162px; left: 324px; }
-.p10 { top: 648px; left: 0px; }
-.p11 { top: 648px; left: 162px; }
-.p12 { top: 648px; left: 324px; }
-.p13 { top: 648px; left: 486px; }
-.p14 { top: 648px; left: 648px; }
-.p15 { top: 810px; left: 0px; }
-.p16 { top: 810px; left: 324px; }
-.p17 { top: 810px; left: 486px; }
-.p18 { top: 810px; left: 648px; }
-.p19 { top: 972px; left: 324px; }
-.p20 { top: 972px; left: 486px; }
-.p21 { top: 972px; left: 648px; }
-.p22 { top: 1134px; left: 0px; }
-.p23 { top: 1134px; left: 162px; }
-.p24 { top: 1134px; left: 324px; }
-.p25 { top: 1134px; left: 486px; }
-.p26 { top: 1134px; left: 648px; }
-.p27 { top: 1296px; left: 0px; }
-.p28 { top: 1296px; left: 162px; }
-.p29 { top: 1296px; left: 324px; }
-.p30 { top: 1296px; left: 486px; }
-.p31 { top: 1296px; left: 648px; }
-.p32 { top: 1458px; left: 0px; }
-.p33 { top: 1458px; left: 162px; }
-.p34 { top: 1458px; left: 324px; }
-.p35 { top: 1620px; left: 0px; }
-.p36 { top: 1620px; left: 162px; }
-.p37 { top: 1620px; left: 324px; }
-.p38 { top: 1458px; left: 486px; }
-.p39 { top: 1782px; left: 0px; }
-.p40 { top: 1782px; left: 162px; }
-.p41 { top: 1782px; left: 324px; }
-.p42 { top: 1782px; left: 486px; }
-.p43 { top: 1782px; left: 648px; }
+.p2 { top: 0px; left: 320px; }
+.p3 { top: 0px; left: 480px; }
+.p4 { top: 0px; left: 640px; }
+.p5 { top: 320px; left: 0px; }
+.p6 { top: 320px; left: 160px; }
+.p7 { top: 480px; left: 0px; }
+.p8 { top: 480px; left: 160px; }
+.p9 { top: 160px; left: 320px; }
+.p10 { top: 640px; left: 0px; }
+.p11 { top: 640px; left: 160px; }
+.p12 { top: 640px; left: 320px; }
+.p13 { top: 640px; left: 480px; }
+.p14 { top: 640px; left: 640px; }
+.p15 { top: 800px; left: 0px; }
+.p16 { top: 800px; left: 320px; }
+.p17 { top: 800px; left: 480px; }
+.p18 { top: 800px; left: 640px; }
+.p19 { top: 960px; left: 320px; }
+.p20 { top: 960px; left: 480px; }
+.p21 { top: 960px; left: 640px; }
+.p22 { top: 1120px; left: 0px; }
+.p23 { top: 1120px; left: 160px; }
+.p24 { top: 1120px; left: 320px; }
+.p25 { top: 1120px; left: 480px; }
+.p26 { top: 1120px; left: 640px; }
+.p27 { top: 1280px; left: 0px; }
+.p28 { top: 1280px; left: 160px; }
+.p29 { top: 1280px; left: 320px; }
+.p30 { top: 1280px; left: 480px; }
+.p31 { top: 1280px; left: 640px; }
+.p32 { top: 1440px; left: 0px; }
+.p33 { top: 1440px; left: 160px; }
+.p34 { top: 1440px; left: 320px; }
+.p35 { top: 1600px; left: 0px; }
+.p36 { top: 1600px; left: 160px; }
+.p37 { top: 1600px; left: 320px; }
+.p38 { top: 1440px; left: 480px; }
+.p39 { top: 1760px; left: 0px; }
+.p40 { top: 1760px; left: 160px; }
+.p41 { top: 1760px; left: 320px; }
+.p42 { top: 1760px; left: 480px; }
+.p43 { top: 1760px; left: 640px; }
