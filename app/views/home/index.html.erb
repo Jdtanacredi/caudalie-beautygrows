@@ -1,10 +1,13 @@
+<%= stylesheet_link_tag "animate.min" %>
+
 <div class="fb-tab-content">
   <div id="beautygrows-header">
     <%= image_tag('BeautyGrowsHeader_v2.jpg') %>
   </div>
   <div id="beautygrows-gallery">
+    <% animations = ["fadeInUp", "fadeInLeft", "fadeInRight"] %>
     <% @photos.each_with_index do |photo, i| %>
-      <%= image_tag photo.standard_url, class: "instaphoto size#{i % 3} p#{i+1}" %>
+      <%= image_tag photo.standard_url, class: "instaphoto animated #{animations[i % 3]} size#{i % 3} p#{i+1}" %>
     <% end %>
   </div>
 </div>
