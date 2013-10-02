@@ -15,6 +15,10 @@
           <%= hidden_field_tag "photos[][instagram_id]", photo.id %>
           <%= hidden_field_tag "photos[][standard_url]", instagram_standard_url %>
           <%= hidden_field_tag "photos[][thumb_url]", instagram_thumbnail_url %>
+          <%= hidden_field_tag "photos[][caption_text]", photo.caption.text %>
+          <%= hidden_field_tag "photos[][user_username]", photo.user.username %>
+          <%= hidden_field_tag "photos[][user_full_name]", photo.user.full_name %>
+          <%= hidden_field_tag "photos[][user_profile_picture]", photo.user.profile_picture %>
         </tr>
       <% end %>
       <tr>

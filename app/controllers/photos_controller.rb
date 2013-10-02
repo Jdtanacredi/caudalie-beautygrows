@@ -97,6 +97,10 @@ class PhotosController < ApplicationController
           instagram_id: instagram_photo[:instagram_id],
           standard_url: instagram_photo[:standard_url],
           thumb_url: instagram_photo[:thumb_url],
+          caption_text: instagram_photo[:caption_text],
+          user_username: instagram_photo[:user_username],
+          user_full_name: instagram_photo[:user_full_name],
+          user_profile_picture: instagram_photo[:user_profile_picture],
           approved: true
         )
         photo.save
