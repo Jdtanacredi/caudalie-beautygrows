@@ -1,17 +1,16 @@
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 
 <div class="fb-tab-content">
   <div id="beautygrows-header">
     <%= image_tag('BeautyGrowsHeader_v2.jpg') %>
   </div>
   <div id="beautygrows-gallery">
+    <div id="photo-detail"></div>
     <% animations = ["fadeInUp", "fadeInLeft", "fadeInRight"] %>
     <% @photos.each_with_index do |photo, i| %>
       <%= image_tag photo.standard_url, 
         class: "instaphoto animated #{animations[i % 3]} size#{i % 3} p#{i+1}",
-        "data-content" => "<div class='user-profile-pic'>#{image_tag(photo.user_profile_picture) if photo.user_profile_picture}</div><div class='photo-info'><div class='photo-user-full-name'>#{photo.user_full_name}</div><div class='photo-user-username'>#{photo.user_username}</div><div class='photo-caption'>#{photo.caption_text}</div></div>"
+        "data-content" => "<div class='close'>x</div><div class='instaphoto-zoom'>#{image_tag photo.standard_url}</div><div class='user-profile-pic'>#{image_tag(photo.user_profile_picture) if photo.user_profile_picture}</div><div class='photo-info'><div class='photo-user-full-name'>#{photo.user_full_name}</div><div class='photo-user-username'>#{photo.user_username}</div><div class='photo-caption'>#{photo.caption_text}</div></div>"
       %>
     <% end %>
   </div>
@@ -32,12 +31,165 @@ window.fbAsyncInit = function() {
   FB.Canvas.setAutoGrow();
 }
 </script>
-<script type="text/javascript">
+<!--script type="text/javascript">
 $( document ).ready(function() {
   $(".instaphoto").popover({
     html: true,
     placement: "top",
     trigger: "hover"
+  });
+});
+</script-->
+<script type="text/javascript">
+var currentBlock;
+var collapsed = true;
+var block0 = [".p1", ".p2", ".p3", ".p4", ".p5", ".p6", ".p7", ".p8", ".p9",
+              ".p10", ".p11", ".p12", ".p13", ".p14", ".p15", ".p16", ".p17",
+              ".p18", ".p19", ".p20", ".p21", ".p22", ".p23", ".p24",
+              ".p25", ".p26", ".p27", ".p28", ".p29", ".p30", ".p31", ".p32",
+              ".p33", ".p34", ".p35", ".p36", ".p37", ".p38", ".p39", ".p40",
+              ".p41", ".p42", ".p43"];
+var block1 = [".p5", ".p6", ".p7", ".p8", ".p9",
+              ".p10", ".p11", ".p12", ".p13", ".p14", ".p15", ".p16", ".p17",
+              ".p18", ".p19", ".p20", ".p21", ".p22", ".p23", ".p24",
+              ".p25", ".p26", ".p27", ".p28", ".p29", ".p30", ".p31", ".p32",
+              ".p33", ".p34", ".p35", ".p36", ".p37", ".p38", ".p39", ".p40",
+              ".p41", ".p42", ".p43"];
+var block2 = [".p10", ".p11", ".p12", ".p13", ".p14", ".p15", ".p16", ".p17",
+              ".p18", ".p19", ".p20", ".p21", ".p22", ".p23", ".p24",
+              ".p25", ".p26", ".p27", ".p28", ".p29", ".p30", ".p31", ".p32",
+              ".p33", ".p34", ".p35", ".p36", ".p37", ".p38", ".p39", ".p40",
+              ".p41", ".p42", ".p43"];
+var block3 = [".p15", ".p16", ".p17",
+              ".p18", ".p19", ".p20", ".p21", ".p22", ".p23", ".p24",
+              ".p25", ".p26", ".p27", ".p28", ".p29", ".p30", ".p31", ".p32",
+              ".p33", ".p34", ".p35", ".p36", ".p37", ".p38", ".p39", ".p40",
+              ".p41", ".p42", ".p43"];
+var block4 = [".p22", ".p23", ".p24",
+              ".p25", ".p26", ".p27", ".p28", ".p29", ".p30", ".p31", ".p32",
+              ".p33", ".p34", ".p35", ".p36", ".p37", ".p38", ".p39", ".p40",
+              ".p41", ".p42", ".p43"];
+var block5 = [".p27", ".p28", ".p29", ".p30", ".p31", ".p32",
+              ".p33", ".p34", ".p35", ".p36", ".p37", ".p38", ".p39", ".p40",
+              ".p41", ".p42", ".p43"];
+var block6 = [".p32",
+              ".p33", ".p34", ".p35", ".p36", ".p37", ".p38", ".p39", ".p40",
+              ".p41", ".p42", ".p43"];
+var block7 = [".p39", ".p40",
+              ".p41", ".p42", ".p43"];
+$( document ).ready(function() {
+  $( "#photo-detail" ).on( "click", ".close", function() {
+    collapsed = true;
+    $( "#photo-detail" ).slideUp( "slow" );
+    $.each(currentBlock, function(i, photo) {
+      $(photo).animate({ "top": "-=400px" }, "slow" );
+    });
+    $( "#beautygrows-gallery").animate({ "height": "+=400px" }, "slow" );
+  });
+
+  $(".p1, .p2, .p3, .p4").click(function() {
+    if(collapsed) {
+      collapsed = false;
+      $("#beautygrows-gallery").animate({ "height": "+=400px" }, "slow" );
+      currentBlock = block0;
+      $.each(block0, function(i, photo) {
+        $(photo).animate({ "top": "+=400px" }, "slow" );
+      });
+      $( "#photo-detail" ).css("top", "0");
+      $( "#photo-detail" ).html($(this).attr("data-content"));
+      $( "#photo-detail" ).slideDown( "slow" );
+    };
+  });
+  $(".p5, .p6, .p9").click(function() {
+    if(collapsed) {
+      collapsed = false;
+      $("#beautygrows-gallery").animate({ "height": "+=400px" }, "slow" );
+      currentBlock = block1;
+      $.each(block1, function(i, photo) {
+        $(photo).animate({ "top": "+=400px" }, "slow" );
+      });
+      $( "#photo-detail" ).css("top", "160px");
+      $( "#photo-detail" ).html($(this).attr("data-content"));
+      $( "#photo-detail" ).slideDown( "slow" );
+    };
+  });
+  $(".p7, .p8").click(function() {
+    if(collapsed) {
+      collapsed = false;
+      $("#beautygrows-gallery").animate({ "height": "+=400px" }, "slow" );
+      currentBlock = block2;
+      $.each(block2, function(i, photo) {
+        $(photo).animate({ "top": "+=400px" }, "slow" );
+      });
+      $( "#photo-detail" ).css("top", "640px");
+      $( "#photo-detail" ).html($(this).attr("data-content"));
+      $( "#photo-detail" ).slideDown( "slow" );
+    };
+  });
+  $(".p10, .p11, .p12, .p13, .p14, .p15, .p16, .p17, .p18").click(function() {
+    if(collapsed) {
+      collapsed = false;
+      $("#beautygrows-gallery").animate({ "height": "+=400px" }, "slow" );
+      currentBlock = block3;
+      $.each(block3, function(i, photo) {
+        $(photo).animate({ "top": "+=400px" }, "slow" );
+      });
+      $( "#photo-detail" ).css("top", "800px");
+      $( "#photo-detail" ).html($(this).attr("data-content"));
+      $( "#photo-detail" ).slideDown( "slow" );
+    };
+  });
+  $(".p19, .p20, .p21, .p22, .p23, .p24, .p25, .p26").click(function() {
+    if(collapsed) {
+      collapsed = false;
+      $("#beautygrows-gallery").animate({ "height": "+=400px" }, "slow" );
+      currentBlock = block4;
+      $.each(block4, function(i, photo) {
+        $(photo).animate({ "top": "+=400px" }, "slow" );
+      });
+      $( "#photo-detail" ).css("top", "1120px");
+      $( "#photo-detail" ).html($(this).attr("data-content"));
+      $( "#photo-detail" ).slideDown( "slow" );
+    };
+  });
+  $(".p27, .p28, .p29, .p30, .p31").click(function() {
+    if(collapsed) {
+      collapsed = false;
+      $("#beautygrows-gallery").animate({ "height": "+=400px" }, "slow" );
+      currentBlock = block5;
+      $.each(block5, function(i, photo) {
+        $(photo).animate({ "top": "+=400px" }, "slow" );
+      });
+      $( "#photo-detail" ).css("top", "1280px");
+      $( "#photo-detail" ).html($(this).attr("data-content"));
+      $( "#photo-detail" ).slideDown( "slow" );
+    };
+  });
+  $(".p32, .p33, .p34, .p38").click(function() {
+    if(collapsed) {
+      collapsed = false;
+      $("#beautygrows-gallery").animate({ "height": "+=400px" }, "slow" );
+      currentBlock = block6;
+      $.each(block6, function(i, photo) {
+        $(photo).animate({ "top": "+=400px" }, "slow" );
+      });
+      $( "#photo-detail" ).css("top", "1440px");
+      $( "#photo-detail" ).html($(this).attr("data-content"));
+      $( "#photo-detail" ).slideDown( "slow" );
+    };
+  });
+  $(".p35, .p36, .p37, .p39, .p40, .p41, .p42, .p43").click(function() {
+    if(collapsed) {
+      collapsed = false;
+      $("#beautygrows-gallery").animate({ "height": "+=400px" }, "slow" );
+      currentBlock = block7;
+      $.each(block7, function(i, photo) {
+        $(photo).animate({ "top": "+=400px" }, "slow" );
+      });
+      $( "#photo-detail" ).css("top", "1760px");
+      $( "#photo-detail" ).html($(this).attr("data-content"));
+      $( "#photo-detail" ).slideDown( "slow" );
+    };
   });
 });
 </script>
