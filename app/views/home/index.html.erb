@@ -80,7 +80,6 @@ var block7 = [".p39", ".p40",
 $( document ).ready(function() {
   $( "#photo-detail" ).on( "click", ".close", function() {
     collapsed = true;
-    $(".instaphoto").css("cursor", "pointer");
     $( "#photo-detail" ).slideUp( "slow" );
     $.each(currentBlock, function(i, photo) {
       $(photo).animate({ "top": "-=400px" }, "slow" );
@@ -91,7 +90,6 @@ $( document ).ready(function() {
   $(".p1, .p2, .p3, .p4").click(function() {
     if(collapsed) {
       collapsed = false;
-      $(".instaphoto").css("cursor", "default");
       $("#beautygrows-gallery").animate({ "height": "+=400px" }, "slow" );
       currentBlock = block0;
       $.each(block0, function(i, photo) {
@@ -100,12 +98,29 @@ $( document ).ready(function() {
       $( "#photo-detail" ).css("top", "0");
       $( "#photo-detail" ).html($(this).attr("data-content"));
       $( "#photo-detail" ).slideDown( "slow" );
+    } else if (!collapsed && (currentBlock == block0)) {
+      // replace image detail for currently open #photo-detail
+      $( "#photo-detail" ).html($(this).attr("data-content"));
+    } else {
+      // collapse currently open #photo-detail 
+      $( "#photo-detail" ).slideUp( "slow" );
+      $.each(currentBlock, function(i, photo) {
+        $(photo).animate({ "top": "-=400px" }, "slow" );
+      });
+      // and open new one
+      currentBlock = block0;
+      $.each(block0, function(i, photo) {
+        $(photo).animate({ "top": "+=400px" }, "slow" );
+      });
+      $( "#photo-detail" ).css("display", "none");
+      $( "#photo-detail" ).css("top", "0");
+      $( "#photo-detail" ).html($(this).attr("data-content"));
+      $( "#photo-detail" ).slideDown( "slow" );
     };
   });
   $(".p5, .p6, .p9").click(function() {
     if(collapsed) {
       collapsed = false;
-      $(".instaphoto").css("cursor", "default");
       $("#beautygrows-gallery").animate({ "height": "+=400px" }, "slow" );
       currentBlock = block1;
       $.each(block1, function(i, photo) {
@@ -114,12 +129,29 @@ $( document ).ready(function() {
       $( "#photo-detail" ).css("top", "160px");
       $( "#photo-detail" ).html($(this).attr("data-content"));
       $( "#photo-detail" ).slideDown( "slow" );
+    } else if (!collapsed && (currentBlock == block1)) {
+      // replace image detail for currently open #photo-detail
+      $( "#photo-detail" ).html($(this).attr("data-content"));
+    } else {
+      // collapse currently open #photo-detail 
+      $( "#photo-detail" ).slideUp( "slow" );
+      $.each(currentBlock, function(i, photo) {
+        $(photo).animate({ "top": "-=400px" }, "slow" );
+      });
+      // and open new one
+      currentBlock = block1;
+      $.each(block1, function(i, photo) {
+        $(photo).animate({ "top": "+=400px" }, "slow" );
+      });
+      $( "#photo-detail" ).css("display", "none");
+      $( "#photo-detail" ).css("top", "160px");
+      $( "#photo-detail" ).html($(this).attr("data-content"));
+      $( "#photo-detail" ).slideDown( "slow" );
     };
   });
   $(".p7, .p8").click(function() {
     if(collapsed) {
       collapsed = false;
-      $(".instaphoto").css("cursor", "default");
       $("#beautygrows-gallery").animate({ "height": "+=400px" }, "slow" );
       currentBlock = block2;
       $.each(block2, function(i, photo) {
@@ -128,12 +160,29 @@ $( document ).ready(function() {
       $( "#photo-detail" ).css("top", "640px");
       $( "#photo-detail" ).html($(this).attr("data-content"));
       $( "#photo-detail" ).slideDown( "slow" );
+    } else if (!collapsed && (currentBlock == block2)) {
+      // replace image detail for currently open #photo-detail
+      $( "#photo-detail" ).html($(this).attr("data-content"));
+    } else {
+      // collapse currently open #photo-detail 
+      $( "#photo-detail" ).slideUp( "slow" );
+      $.each(currentBlock, function(i, photo) {
+        $(photo).animate({ "top": "-=400px" }, "slow" );
+      });
+      // and open new one
+      currentBlock = block2;
+      $.each(block2, function(i, photo) {
+        $(photo).animate({ "top": "+=400px" }, "slow" );
+      });
+      $( "#photo-detail" ).css("display", "none");
+      $( "#photo-detail" ).css("top", "640px");
+      $( "#photo-detail" ).html($(this).attr("data-content"));
+      $( "#photo-detail" ).slideDown( "slow" );
     };
   });
   $(".p10, .p11, .p12, .p13, .p14, .p15, .p16, .p17, .p18").click(function() {
     if(collapsed) {
       collapsed = false;
-      $(".instaphoto").css("cursor", "default");
       $("#beautygrows-gallery").animate({ "height": "+=400px" }, "slow" );
       currentBlock = block3;
       $.each(block3, function(i, photo) {
@@ -142,12 +191,29 @@ $( document ).ready(function() {
       $( "#photo-detail" ).css("top", "800px");
       $( "#photo-detail" ).html($(this).attr("data-content"));
       $( "#photo-detail" ).slideDown( "slow" );
+    } else if (!collapsed && (currentBlock == block3)) {
+      // replace image detail for currently open #photo-detail
+      $( "#photo-detail" ).html($(this).attr("data-content"));
+    } else {
+      // collapse currently open #photo-detail 
+      $( "#photo-detail" ).slideUp( "slow" );
+      $.each(currentBlock, function(i, photo) {
+        $(photo).animate({ "top": "-=400px" }, "slow" );
+      });
+      // and open new one
+      currentBlock = block3;
+      $.each(block3, function(i, photo) {
+        $(photo).animate({ "top": "+=400px" }, "slow" );
+      });
+      $( "#photo-detail" ).css("display", "none");
+      $( "#photo-detail" ).css("top", "800px");
+      $( "#photo-detail" ).html($(this).attr("data-content"));
+      $( "#photo-detail" ).slideDown( "slow" );
     };
   });
   $(".p19, .p20, .p21, .p22, .p23, .p24, .p25, .p26").click(function() {
     if(collapsed) {
       collapsed = false;
-      $(".instaphoto").css("cursor", "default");
       $("#beautygrows-gallery").animate({ "height": "+=400px" }, "slow" );
       currentBlock = block4;
       $.each(block4, function(i, photo) {
@@ -156,12 +222,29 @@ $( document ).ready(function() {
       $( "#photo-detail" ).css("top", "1120px");
       $( "#photo-detail" ).html($(this).attr("data-content"));
       $( "#photo-detail" ).slideDown( "slow" );
+    } else if (!collapsed && (currentBlock == block4)) {
+      // replace image detail for currently open #photo-detail
+      $( "#photo-detail" ).html($(this).attr("data-content"));
+    } else {
+      // collapse currently open #photo-detail 
+      $( "#photo-detail" ).slideUp( "slow" );
+      $.each(currentBlock, function(i, photo) {
+        $(photo).animate({ "top": "-=400px" }, "slow" );
+      });
+      // and open new one
+      currentBlock = block4;
+      $.each(block4, function(i, photo) {
+        $(photo).animate({ "top": "+=400px" }, "slow" );
+      });
+      $( "#photo-detail" ).css("display", "none");
+      $( "#photo-detail" ).css("top", "1120px");
+      $( "#photo-detail" ).html($(this).attr("data-content"));
+      $( "#photo-detail" ).slideDown( "slow" );
     };
   });
   $(".p27, .p28, .p29, .p30, .p31").click(function() {
     if(collapsed) {
       collapsed = false;
-      $(".instaphoto").css("cursor", "default");
       $("#beautygrows-gallery").animate({ "height": "+=400px" }, "slow" );
       currentBlock = block5;
       $.each(block5, function(i, photo) {
@@ -170,12 +253,29 @@ $( document ).ready(function() {
       $( "#photo-detail" ).css("top", "1280px");
       $( "#photo-detail" ).html($(this).attr("data-content"));
       $( "#photo-detail" ).slideDown( "slow" );
+    } else if (!collapsed && (currentBlock == block5)) {
+      // replace image detail for currently open #photo-detail
+      $( "#photo-detail" ).html($(this).attr("data-content"));
+    } else {
+      // collapse currently open #photo-detail 
+      $( "#photo-detail" ).slideUp( "slow" );
+      $.each(currentBlock, function(i, photo) {
+        $(photo).animate({ "top": "-=400px" }, "slow" );
+      });
+      // and open new one
+      currentBlock = block5;
+      $.each(block5, function(i, photo) {
+        $(photo).animate({ "top": "+=400px" }, "slow" );
+      });
+      $( "#photo-detail" ).css("display", "none");
+      $( "#photo-detail" ).css("top", "1280px");
+      $( "#photo-detail" ).html($(this).attr("data-content"));
+      $( "#photo-detail" ).slideDown( "slow" );
     };
   });
   $(".p32, .p33, .p34, .p38").click(function() {
     if(collapsed) {
       collapsed = false;
-      $(".instaphoto").css("cursor", "default");
       $("#beautygrows-gallery").animate({ "height": "+=400px" }, "slow" );
       currentBlock = block6;
       $.each(block6, function(i, photo) {
@@ -184,17 +284,52 @@ $( document ).ready(function() {
       $( "#photo-detail" ).css("top", "1440px");
       $( "#photo-detail" ).html($(this).attr("data-content"));
       $( "#photo-detail" ).slideDown( "slow" );
+    } else if (!collapsed && (currentBlock == block6)) {
+      // replace image detail for currently open #photo-detail
+      $( "#photo-detail" ).html($(this).attr("data-content"));
+    } else {
+      // collapse currently open #photo-detail 
+      $( "#photo-detail" ).slideUp( "slow" );
+      $.each(currentBlock, function(i, photo) {
+        $(photo).animate({ "top": "-=400px" }, "slow" );
+      });
+      // and open new one
+      currentBlock = block6;
+      $.each(block6, function(i, photo) {
+        $(photo).animate({ "top": "+=400px" }, "slow" );
+      });
+      $( "#photo-detail" ).css("display", "none");
+      $( "#photo-detail" ).css("top", "1440px");
+      $( "#photo-detail" ).html($(this).attr("data-content"));
+      $( "#photo-detail" ).slideDown( "slow" );
     };
   });
   $(".p35, .p36, .p37, .p39, .p40, .p41, .p42, .p43").click(function() {
     if(collapsed) {
       collapsed = false;
-      $(".instaphoto").css("cursor", "default");
       $("#beautygrows-gallery").animate({ "height": "+=400px" }, "slow" );
       currentBlock = block7;
       $.each(block7, function(i, photo) {
         $(photo).animate({ "top": "+=400px" }, "slow" );
       });
+      $( "#photo-detail" ).css("top", "1760px");
+      $( "#photo-detail" ).html($(this).attr("data-content"));
+      $( "#photo-detail" ).slideDown( "slow" );
+    } else if (!collapsed && (currentBlock == block7)) {
+      // replace image detail for currently open #photo-detail
+      $( "#photo-detail" ).html($(this).attr("data-content"));
+    } else {
+      // collapse currently open #photo-detail 
+      $( "#photo-detail" ).slideUp( "slow" );
+      $.each(currentBlock, function(i, photo) {
+        $(photo).animate({ "top": "-=400px" }, "slow" );
+      });
+      // and open new one
+      currentBlock = block7;
+      $.each(block7, function(i, photo) {
+        $(photo).animate({ "top": "+=400px" }, "slow" );
+      });
+      $( "#photo-detail" ).css("display", "none");
       $( "#photo-detail" ).css("top", "1760px");
       $( "#photo-detail" ).html($(this).attr("data-content"));
       $( "#photo-detail" ).slideDown( "slow" );
